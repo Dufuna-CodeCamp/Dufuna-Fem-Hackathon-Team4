@@ -1,0 +1,107 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width:  auto;
+    font-family: san-serif;
+    background-image: url(backgroundimage.jpg);
+    background-size: cover;
+    background-position: center;
+    border: 0 solid rgb(17, 68, 233)
+}
+img 
+{
+    padding: 5px;
+    width: 3%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding-top: 30px;
+    padding-bottom: 0px
+  }
+.signupform
+{
+    width: 300px;
+    height: 100%;
+    box-shadow: 0 0 3px 0 rgba(0.0.0.0.3);
+    background: #fff;
+    padding-top: 0%; 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    margin: 0%  auto 0;
+    border: 1px solid;
+    border-width: 10px;
+    border-color: rgba(72, 75, 75, 0);
+    border-radius: 8px;
+
+}
+.inventory
+{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width:  auto;
+    font-size: 10px;
+    text-align: center;
+}
+.hr3 
+{
+    color: rgba(0, 162, 255, 0.952);
+}
+.hr4 
+{
+    color: black
+}
+
+.signin p
+{
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 15px;
+
+}
+.Signup 
+{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 10px;
+
+} 
+.inputbox 
+{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border:1px solid #999;
+    outline: none
+
+}
+
+button
+{
+    color: white;
+    background-color: rgba(0, 68, 255, 0.493);
+    padding: 10px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    margin-left:120px
+
+}
+.Email
+{
+    text-align: left;
+    font-size: 10px;  
+}
+.password
+{
+    text-align: left;
+    font-size: 10px;  
+}
+  
