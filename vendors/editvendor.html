@@ -50,13 +50,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href='../inventories/inventories.html'>
+                    <a href='../purchases/purchases.html'>
                         <img src='../Images/purchases.png' alt='purchases icon' />
                         Purchases
                     </a>
                 </li>
                 <li>
-                    <a href='#'>
+                    <a href='../sales/sales.html'>
                         <img src='../Images/sales.png' alt='sales icon' />
                         Sales
                     </a>
@@ -67,22 +67,70 @@
             <div class="content">
 
                 <!-- where to cut header -->
-                <div class='addcategory'>
-                    <h3> Edit Category</h3>
-                    <form>
+                <div class='addvendor'>
+                    <span class='heading'>
+                        <img src='../Images/vendors.png' alt='vendors icon' />
+                        <h3> Edit Vendor Details</h3>
+                    </span>
+                    <form class='vendor-form'>
                         <div>
-                            <label for='categoryName'>New Category Name</label>
-                            <input type='text' id='categoryName' name='categoryName' />
+                            <label for='vendorName'>Vendor Name</label>
+                            <input type='text' id='vendorName' name='vendorName' />
                         </div>
 
                         <div>
-                            <label for='categoryName'>Description</label>
-                            <textarea id='description' name='description'  ></textarea>
+                            <label for='phoneNumber'>Phone Number</label>
+                            <input type='text' id='phoneNumber' name='phoneNumber' />
+                        </div>
+
+                        <div>
+                            <label for='email'>Email</label>
+                            <input type='email' id='email' name='email' />
+                        </div>
+
+                        <div>
+                            <label for='website'>Website</label>
+                            <input type='text' id='website' name='website' />
+                        </div>
+
+                        <div>
+                            <label for='address'>Address</label>
+                            <textarea id='address' name='address'  ></textarea>
+                        </div>
+
+                        <div class='stack'>
+                            <label for='country'>Country</label>
+                            <input type='text' id='country' name='country' />
+                        </div>
+
+                        <div class='stack'>
+                            <label for='state'>State</label>
+                            <input type='text' id='state' name='state' />
+                        </div>
+
+                        <div class='stack'>
+                            <label for='city'>City</label>
+                            <input type='text' id='city' name='city' />
+                        </div>
+
+                        <div class='stack'>
+                            <label for='postal code'>Postal code</label>
+                            <input type='text' id='postal code' name='postal code' />
+                        </div>
+
+                        <div>
+                            <label for='currency'>Accepted Currency</label>
+                            <input type='text' id='currency' name='currency' />
+                        </div>
+
+                        <div>
+                            <label for='remarks'>Remarks</label>
+                            <textarea id='remarks' name='remarks'  ></textarea>
                         </div>
 
                         <div class='add-action-btn'>
                             <button type='submit'>Save</button>
-                            <a href='categories.html'>Cancel</a>
+                            <a href='vendors.html'>Cancel</a>
                         </div>
                     </form>
                 </div>

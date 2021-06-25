@@ -36,6 +36,9 @@ input[type='search'] {
     border-radius: 6px;
     border: 1px solid #C4C4C4;
     font-size: 18px;
+    width: 265px;
+
+
 }
 
 .filter-btn {
@@ -82,20 +85,44 @@ td {
     margin: 5em auto;
 }
 
-.addcategory div {
+.addvendor {
+    width: 90%;
+    margin: 1em auto 1em 2em;
+}
+
+.addvendor img {
+    color: black;
+    background-color: black;
+}
+
+.addcategory div,
+.addvendor div {
     margin: 2em 0;
 }
 
-.addcategory form {
+.addcategory form,
+.addvendor form {
    position: relative;
 }
 
 .addcategory input,
 .addcategory textarea,
-.add-action-btn {
+.add-action-btn,
+.addvendor input,
+.addvendor textarea {
     position: absolute;
     right: 0;
     width: 65%;
+}
+
+.addvendor input,
+.addvendor textarea {
+    width: 300px;
+    right: 200px;
+}
+
+.addvendor textarea {
+    height: 70px;
 }
 
 .addcategory div:last-of-type {
@@ -121,4 +148,21 @@ td {
     background-color: #474242;
     color: #fff;
     text-decoration: none;
+}
+
+.vendor-form {
+    border: 1px solid #C4C4C4;
+    background-color: #fff;
+    margin: 1.5em 0;
+    padding: 1.5em;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.purchase img {
+    background-color: black;
 }

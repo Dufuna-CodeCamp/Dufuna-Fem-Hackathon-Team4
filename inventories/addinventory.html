@@ -67,58 +67,43 @@
             <div class="content">
 
                 <!-- where to cut header -->
-                    <div class='category-header'>
-                        <span class='heading purchase'>
-                            <img src='../Images/inventories.png' alt='Inventory icon' />
-                            <h2>Inventories</h2>
-                        </span>
-                        <a href='addinventory.html'>
-                            <button><i class="fa fa-plus" aria-hidden="true"></i> New Inventory</button>
-                        </a>
-                    </div>
-    
-                    <div class='field'>
-                        <form class='field-form'>
-                            <input type='search' placeholder='Search for inventory' />
-                            <button type='submit' class='filter-btn'>Filter</button>
-                        </form>
-    
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>S/N</th>
-                                    <th>Inventory Name</th>
-                                    <th>Quantity</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
-                                    <th>Created at</th>
-                                    <th>Created by</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-    
-                            <tbody>
-                                <tr>
-                                    <td>yo</td>
-                                    <td>yo</td>
-                                    <td>yo</td>
-                                    <td>yo</td>
-                                    <td>yo</td>
-                                    <td>yo</td>
-                                    <td>yo</td>
-                                    <td>
-                                        <button class='del-btn'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-    
-                            </tbody>
-                        </table>
-                        <!-- 
-                            <p>You currently have no purchase order in your database</p> 
-                            <a href='addpurchase.html'>Add New Purchase Order</a>
-                        -->
+                <div class='addpurchase'>
+                    <span class='heading purchase'>
+                        <img src='../Images/inventories.png' alt='Inventory icon' />
+                        <h3>New Inventory</h3>
+                    </span>
+                    <form class='vendor-form'>
+                        <div>
+                            <label for='productName'>Inventory Name</label>
+                            <input type='text' id='productName' name='productName' />
+                        </div>
 
-                    </div>
+                        <div>
+                            <label for='quantity'>Purchase reference no (PRN)</label>
+                            <input type='text' id='quantity' name='quantity' />
+                        </div>
+
+                        <div>
+                            <label for='description'>Description</label>
+                            <textarea id='description' name='description'  ></textarea>
+                        </div>
+
+                        <div>
+                            <label for='category'>Category</label>
+                            <select name='category' id='category'>
+                                <option default>Select item</option>
+                                <option value=''></option>
+                                <option value=''></option>
+                            </select>
+                        </div>
+
+                        
+                        <div class='add-action-btn'>
+                            <button type='submit'>Save</button>
+                            <a href='inventories.html'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
                 
                 <!-- where to cut footer -->
             </div>
