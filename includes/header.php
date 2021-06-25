@@ -1,3 +1,5 @@
+<?php require_once '../php_action/core.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,31 +34,31 @@
                     </a>
                 </li>
                 <li>
-                    <a href='categories.html'>
+                    <a href='../categories/categories.php'>
                         <img src='../Images/categories.png' alt='categories icon' />
                         <span>Categories</span>
                     </a>
                 </li>
                 <li>
-                    <a href='../inventories/inventories.html'>
+                    <a href='../inventories/inventories.php'>
                         <img src='../Images/inventories.png' alt='inventories icon' />
                         <span>Inventories</span>
                     </a>
                 </li>
                 <li>
-                    <a href='../vendors/vendors.html'>
+                    <a href='../vendors/vendors.php'>
                         <img src='../Images/vendors.png' alt='vendors icon' />
                         Vendors
                     </a>
                 </li>
                 <li>
-                    <a href='../inventories/inventories.html'>
+                    <a href='../inventories/inventories.php'>
                         <img src='../Images/purchases.png' alt='purchases icon' />
                         Purchases
                     </a>
                 </li>
                 <li>
-                    <a href='#'>
+                    <a href='../sales/sales.php'>
                         <img src='../Images/sales.png' alt='sales icon' />
                         Sales
                     </a>
@@ -64,32 +66,6 @@
             </ul>
         </nav>
         <div class='right'>
-            <div class="content">
-
-                <!-- where to cut header -->
-                <div class='addcategory'>
-                    <h3> Edit Category</h3>
-                    <form>
-                        <div>
-                            <label for='categoryName'>New Category Name</label>
-                            <input type='text' id='categoryName' name='categoryName' />
-                        </div>
-
-                        <div>
-                            <label for='categoryName'>Description</label>
-                            <textarea id='description' name='description'  ></textarea>
-                        </div>
-
-                        <div class='add-action-btn'>
-                            <button type='submit'>Save</button>
-                            <a href='categories.html'>Cancel</a>
-                        </div>
-                    </form>
-                </div>
-                
-                <!-- where to cut footer -->
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+            <!-- start of container -->
+            <div class='content'>
+ 
