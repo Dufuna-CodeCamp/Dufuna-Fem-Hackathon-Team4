@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../index.css' />
+    <link rel='stylesheet' href='../app.css' />
+    <script src="https://use.fontawesome.com/3ca8073125.js"></script>
+    <title>Inventory Management Software</title>
+</head>
+<body>
+    <header>
+        <p class='title'>Inventory Management System</p>
+        <div>
+            <img src='../Images/avatar.png' alt='avatar icon'/>
+            <p>Mariam Eluma</p>
+        </div>
+    </header>
+    <div class='main'>
+        <nav>
+            <ul>
+                <li>
+                    <a href='/'>
+                        <img src='../Images/dashboard.png' alt='dashboard icon' />
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <img src='../Images/customers.png' alt='customers icon' />
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href='categories.html'>
+                        <img src='../Images/categories.png' alt='categories icon' />
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href='../inventories/inventories.html'>
+                        <img src='../Images/inventories.png' alt='inventories icon' />
+                        <span>Inventories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href='../vendors/vendors.html'>
+                        <img src='../Images/vendors.png' alt='vendors icon' />
+                        Vendors
+                    </a>
+                </li>
+                <li>
+                    <a href='../inventories/inventories.html'>
+                        <img src='../Images/purchases.png' alt='purchases icon' />
+                        Purchases
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <img src='../Images/sales.png' alt='sales icon' />
+                        Sales
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class='right'>
+            <div class="content">
+
+                <!-- where to cut header -->
+                <div class='addcategory'>
+                    <h3> Edit Category</h3>
+                    <form>
+                        <div>
+                            <label for='categoryName'>New Category Name</label>
+                            <input type='text' id='categoryName' name='categoryName' />
+                        </div>
+
+                        <div>
+                            <label for='categoryName'>Description</label>
+                            <textarea id='description' name='description'  ></textarea>
+                        </div>
+
+                        <div class='add-action-btn'>
+                            <button type='submit'>Save</button>
+                            <a href='categories.html'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- where to cut footer -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

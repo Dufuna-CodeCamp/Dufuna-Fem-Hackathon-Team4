@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../index.css' />
+    <link rel='stylesheet' href='../app.css' />
+    <script src="https://use.fontawesome.com/3ca8073125.js"></script>
+    <title>Inventory Management Software</title>
+</head>
+<body>
+    <header>
+        <p class='title'>Inventory Management System</p>
+        <div>
+            <img src='../Images/avatar.png' alt='avatar icon'/>
+            <p>Mariam Eluma</p>
+        </div>
+    </header>
+    <div class='main'>
+        <nav>
+            <ul>
+                <li>
+                    <a href='/'>
+                        <img src='../Images/dashboard.png' alt='dashboard icon' />
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <img src='../Images/customers.png' alt='customers icon' />
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href='../categories/categories.html'>
+                        <img src='../Images/categories.png' alt='categories icon' />
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href='inventories/inventories.html'>
+                        <img src='../Images/inventories.png' alt='inventories icon' />
+                        <span>Inventories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href='../vendors/vendors.html'>
+                        <img src='../Images/vendors.png' alt='vendors icon' />
+                        Vendors
+                    </a>
+                </li>
+                <li>
+                    <a href='../purchases/purchases.html'>
+                        <img src='../Images/purchases.png' alt='purchases icon' />
+                        Purchases
+                    </a>
+                </li>
+                <li>
+                    <a href='sales.html'>
+                        <img src='../Images/sales.png' alt='sales icon' />
+                        Sales
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class='right'>
+            <div class="content">
+
+                <!-- where to cut header -->
+                <div class='addpurchase'>
+                    <span class='heading purchase'>
+                        <img src='../Images/sales.png' alt='Sales icon' />
+                        <h3>New Sales Order</h3>
+                    </span>
+                    <form class='vendor-form'>
+                        <div>
+                            <label for='customerName'>Customer Name</label>
+                            <input type='text' id='customerName' name='customerName' />
+                        </div>
+
+                        <div>
+                            <label for='srn'>Sales reference no (SRN)</label>
+                            <input type='text' id='srn' name='srn' />
+                        </div>
+
+                        <div>
+                            <label for='customerNote'>Customer Notes</label>
+                            <textarea id='customerNote' name='customerNote'  ></textarea>
+                        </div>
+
+                        <table>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Unit Cost</th>
+                                <th>Amount</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name='product'>
+                                        <option default>Select item</option>
+                                        <option value=''></option>
+                                        <option value=''></option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type='text' name='description' placeholder="Enter Description" />
+                                </td>
+                                <td>
+                                    <input type='number' name='quantity' placeholder="Enter Quantity" />
+                                </td>
+                                <td>
+                                    <input type='number' name='unitCost' placeholder="Enter Cost" />
+                                </td>
+                                <td>
+                                    0.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">TOTAL</td>
+                                <td>0</td>
+                                <td>0.00</td>
+                                <td>0.00</td>
+                            </tr>
+                        </table>
+
+                        
+                        <div class='add-action-btn'>
+                            <button type='submit'>Save</button>
+                            <a href='sales.html'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- where to cut footer -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
