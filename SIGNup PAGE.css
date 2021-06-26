@@ -55,7 +55,7 @@ img
     color: black
 }
 
-.signin p
+.Signup p
 {
     text-align: left;
     margin-bottom: 30px;
@@ -72,11 +72,11 @@ img
 .inputbox 
 {
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 5px;
+    margin: 5px 0;
     width: 100%;
     border:1px solid #999;
-    outline: none
+    outline: snow
 
 }
 
@@ -94,6 +94,22 @@ button
     margin-left:120px
 
 }
+.firstname
+{
+    text-align: left;
+    font-size: 10px;  
+    
+}
+.lastname
+{
+    text-align: left;
+    font-size: 10px;  
+} 
+.Username
+{
+    text-align: left;
+    font-size: 10px;  
+}
 .Email
 {
     text-align: left;
@@ -104,4 +120,13 @@ button
     text-align: left;
     font-size: 10px;  
 }
-  
+.username
+{
+    text-align: left;
+    font-size: 10px;  
+}
+.phonenumber
+{
+    text-align: left;
+    font-size: 10px; 
+}
