@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'php_action/core.php';
+    require_once '../php_action/core.php';
 
     $valid['success'] = array('success' => false, 'messages' => array());
 
@@ -20,26 +20,32 @@
             $valid['success'] = false;
             $valid['messages'] = 'Error while adding vendor';
         }
-
-        $conn->close();
-
+   
         echo json_encode($valid);
     }
 
 ?>
 
-<?php require_once 'includes/header.php'; ?>
+<?php require_once '../includes/header.php'; ?>
+    <div class='addcategory'>
+        <h3> New Category</h3>
+        <form action='addcategory.php' method='POST'>
+            <div>
+                <label for='categoryName'>New Category Name</label>
+                <input type='text' id='categoryName' name='categoryName' />
+            </div>
 
-<form action='addcategory.php' method='POST'>
-    <label for='categoryName'>Category Name</label>
-    <input type='text' name='categoryName' id='categoryName' />
-    <br /><br />
-    <label for='categoryDescription'>categoryDescription</label>
-    <input type='text' name='categoryDescription' id='categoryDescription' />
-    <br /><br />
-    <button type='submit'> Submit</button>
+            <div>
+                <label for='categoryDescription'>Description</label>
+                <textarea id='categoryDescription' name='categoryDescription'  ></textarea>
+            </div>
 
-</form>
+            <div class='add-action-btn'>
+                <button type='submit'>Save</button>
+                <a href='categories.php'>Cancel</a>
+            </div>
+        </form>
+    </div>
 
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

@@ -7,35 +7,36 @@
 
     // to prevent user from accessinng log in page when logged in
     if(isset($_SESSION['id'])) {
-        header('location: dashboard.php');
+        header('location: dashboard/dashboard.php');
     }
 
-    $errors = array();
-
     if($_POST) {
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
        
 
-        if(empty($username) || empty($password)) {
-            if($username == '') {
-                $errors[] = 'Username is required';
+        if(empty($email) || empty($password)) {
+            if($email == '') {
+                $emailError = 'Email is required';
             }
 
             if($password == '') {
-                $errors[] = 'Password is required';
+                $passwordError = 'Password is required';
             }
+            echo $emailError;
+            echo $passwordError;
 
         } else {
-            $sql = "SELECT * FROM `users` WHERE username = '$username'";
+            $sql = "SELECT * FROM users WHERE email= '$email'";
             $result = $conn->query($sql);
             // print_r($result);
             // echo $result->num_rows;
+           
 
             if($result->num_rows == 1) {
                 $password = md5($password);
                 // exists
-                $mainSql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+                $mainSql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
                 $mainResult = $conn->query($mainSql);
                 
                 if($mainResult->num_rows == 1) {
@@ -46,48 +47,59 @@
                     //set session
                     $_SESSION['id'] = $user_id;
 
-                    header('location: dashboard.php');
+                    header('location: dashboard/dashboard.php');
                 } else {
-                    $errors[] = 'Incorrect username/password combination';
+                    $error = 'Incorrect email/password combination';
                 }
 
 
             } else {
-                $errors[] = 'Username does not exist';
+                $error = 'Email does not exist';
             }
         }
     }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+ <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory Management System</title>
-</head>
-<body>
-    
+    <title> Inventory management system</title>
+    <link rel="stylesheet" href="index.css">
+ </head>
+ <body>
+  <div class="inventory">
+    <img src="Images/inventoryicon.png" >
+    <p>
+      <span class="hr3">Inventory management</span>     
+      <span class="hr4">  made easy  </span>
+    </p>
+  </div>
+  <div class="signupform">
 
-    <form action='<?php echo $_SERVER['PHP_SELF'] ?>' method='POST' id='loginForm'>
-        <div>
-            <?php if($errors) {
-                foreach ($errors as $key => $value) {
-                    echo $value;
-                }
-            } ?>        
+    <p class="Signin">Sign In</p> 
+    <span class= "error"><?php echo $error; ?></span>
+    <form action='index.php' method='POST' id='loginForm'>
+        <label for="email" class="Email"> Email </label> 
+        <input type="Email" id="email" name="email" class="inputbox">
+        <div class= "error">
+            <?php
+                if ($emailError) {
+                    echo $emailError;
+                } 
+            ?>
         </div>
-        <input type='username' name='username' placeholder='Username' >
-        <br />
-        <br />
-        <!-- <input type='email' name='email' placeholder='Email' >
-        <br />
-        <br /> -->
-        <input type='password' name='password' placeholder='Password' >
-        <br />
-        <br />
-        <button type='submit'>Sign In</button>
+        <label for="password" class="password"> Password </label>
+        <input type="password" id="password" name="password" class="inputbox">
+        <div class= "error"><?php echo $passwordError; ?></div>
+        <div class="sign-btn">
+            <button type="submit"> Sign In </button>
+        </div>  
+        <div class="signup">
+            <p  class="Signup"> Don't have an account? <a href="signup.php"> Sign up!</a> </p>
+        </div>  
     </form>
-    
-</body>
-</html>
+    </div>
+ </body>
+</html>  

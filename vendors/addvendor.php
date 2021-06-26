@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'php_action/core.php';
+    require_once '../php_action/core.php';
 
     $valid['success'] = array('success' => false, 'messages' => array());
 
@@ -9,8 +9,12 @@
         $vendorPhoneNumber = $_POST['vendorPhoneNumber'];
         $vendorEmail = $_POST['vendorEmail'];
         $vendorAddress = $_POST['vendorAddress'];
-
-        $sql = "INSERT INTO vendors (vendor_name, phone_number, vendor_email, vendor_address) VALUES ('$vendorName', '$vendorPhoneNumber', '$vendorEmail', '$vendorAddress')";
+        $country = $_POST['country'];
+        $state =  $_POST['state'];
+        $city =  $_POST['city'];
+        $vendorAddress = "'$streetAddress' .', ' . '$city' .', ' .'$state' .', ' .'$country'";
+        $sql = "INSERT INTO vendors (vendor_name, phone_number, vendor_email, vendor_address)
+        VALUES ('$vendorName', '$vendorPhoneNumber', '$vendorEmail', '$vendorAddress')";
     
         if($conn->query($sql) === TRUE) {
             header('location: vendors.php');
@@ -21,31 +25,44 @@
             $valid['messages'] = 'Error while adding vendor';
         }
 
-        $conn->close();
-
+   
         echo json_encode($valid);
     }
-
 ?>
 
-<?php require_once 'includes/header.php'; ?>
+<?php require_once '../includes/header.php'; ?>
 
-<form action='addvendor.php' method='POST'>
-    <label for='vendorName'>Vendor Name</label>
-    <input type='text' name='vendorName' id='vendorName' />
-    <br /><br />
-    <label for='vendorPhoneNumber'>Vendor Phone Number</label>
-    <input type='text' name='vendorPhoneNumber' id='vendorPhoneNumber' />
-    <br /><br />
-    <label for='vendorEmail'>Vendor Email</label>
-    <input type='email' name='vendorEmail' id='vendorEmail' />
-    <br /><br />
-    <label for='vendorAddress'>Vendor Address</label>
-    <input type='text' name='vendorAddress' id='vendorAddress' />
-    <br /><br />
-    <button type='submit'> Submit</button>
+    <div class='addvendor'>
+        <span class='heading'>
+            <img src='../Images/vendors.png' alt='vendors icon' />
+            <h3> Create New Vendor</h3>
+        </span>
+        <form class='vendor-form' action='addvendor.php' method='POST'>
+            <div>
+                <label for='vendorName'>Vendor Name</label>
+                <input type='text' id='vendorName' name='vendorName' />
+            </div>
 
-</form>
+            <div>
+                <label for='vendorPhoneNumber'>Phone Number</label>
+                <input type='text' name='vendorPhoneNumber' id='vendorPhoneNumber' />
+            </div>
 
+            <div>
+                <label for='vendorEmail'>Email</label>
+                <input type='email' name='vendorEmail' id='vendorEmail' />
+            </div>
+         
+            <div>
+                <label for='vendorAddress'>Vendor Address</label>
+                <input type='text' name='streetAddress' id='streetAddress' />
+            </div>
+            
+            <div class='add-action-btn'>
+                <button type='submit'>Save</button>
+                <a href='vendors.php'>Cancel</a>
+            </div>
+        </form>
+    </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

@@ -18,8 +18,8 @@
     }
 
     // query for all categories
-    $sql = 'SELECT users.username, users.id, categories.description, categories.category_name, categories.created_at, categories.id FROM users, categories WHERE categories.user_id=users.id';
-
+    $sql = 'SELECT users.email, users.id, categories.description, categories.category_name, 
+    categories.created_at, categories.id FROM users, categories WHERE categories.user_id=users.id';
 
     // make query and get result
     $result = mysqli_query($conn, $sql);
@@ -29,47 +29,59 @@
 
     // free result from memory
     mysqli_free_result($result);
-
-    // close connection
-    mysqli_close($conn);
-
 ?>
 
 <?php require_once '../includes/header.php'; ?>
 
-<a href='addcategory.php'><button> Add Category</button></a>
-
-<table>
-    <thead>
-        <tr>
-            <th>S/N</th>
-            <th>Category Name</th>
-            <th>Description</th>
-            <th>Created at</th>
-            <th>Created by</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($categories as $category) { ?>
-            <tr>
-                <td><?php echo htmlspecialchars($category['id']); ?></td>
-                <td><?php echo htmlspecialchars($category['category_name']); ?></td>
-                <td><?php echo htmlspecialchars($category['description']); ?></td>
-                <td><?php echo htmlspecialchars($category['created_at']); ?></td>
-                <td><?php echo htmlspecialchars($category['username']); ?></td>
-                <td>
-                    <a href="editcategory.php?id=<?php echo $category['id']; ?>">Edit</a>
-                    <!-- DELETE FORM -->
-                    <form action="categories.php" method="POST">
-                        <input type='hidden' name='id_to_delete' value="<?php echo $category['id']; ?>">
-                        <button type='submit' name='delete'>Delete</button>
-                    </form>
-                </td>
-            </tr>
-        <?php } ?>
-    <tbody>
-</table>
-
+    <div class='category-header'>
+        <span class='heading'>
+            <img src='../Images/categories.png' alt='categories icon' />
+            <h2>Categories</h2>
+        </span>
+        <a href='addcategory.php'>
+            <button><i class="fa fa-plus" aria-hidden="true"></i> New Category</button>
+        </a>
+    </div>    
+    <div class='field'>
+        <form class='field-form'>
+            <input type='search' placeholder='Search for category' />
+            <button type='submit' class='filter-btn'>Filter</button>
+        </form>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Category Name</th>
+                    <th>Created at</th>
+                    <th>Created by</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <?php foreach($categories as $category) { ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($category['id']); ?></td>
+                        <td><?php echo htmlspecialchars($category['category_name']); ?></td>
+                        <td><?php echo htmlspecialchars($category['created_at']); ?></td>
+                        <td><?php echo htmlspecialchars($category['email']); ?></td>
+                        <td><?php echo htmlspecialchars($category['description']); ?></td>
+                        <td>
+                            <a href="editcategory.php?id=<?php echo $category['id']; ?>">
+                                <button>Edit <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            </a>
+                            <!-- DELETE FORM -->
+                            <form action="categories.php" method="POST">
+                                <input type='hidden' name='id_to_delete' value="<?php echo $category['id']; ?>">
+                                <button class='del-btn' type='submit' name='delete'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
 
 <?php require_once '../includes/footer.php'; ?>

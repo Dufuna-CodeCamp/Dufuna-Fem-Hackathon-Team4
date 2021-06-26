@@ -8,5 +8,5 @@
     // destroy the session
     session_destroy();
 
-    header('location:  http://localhost/inventory%20management%20system/index.php');
+    header('location: index.php');
 ?>
