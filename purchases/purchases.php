@@ -28,44 +28,59 @@
 
     // free result from memory
     mysqli_free_result($result);
-
-    // close connection
-    mysqli_close($conn);
-
+  
 ?>
 
 <?php require_once '../includes/header.php'; ?>
-
-<a href='addpurchase.php'><button> Add Purchase</button></a>
-
-<table>
-    <thead>
-        <tr>
-            <th>S/N</th>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total Price</th>
-            <th>Vendor</th>
-            <th>Created at</th>
-            <th>Created by</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($purchases as $purchase) { ?>
-            <tr>
-                <td><?php echo htmlspecialchars($purchase['id']); ?></td>
-                <td><?php echo htmlspecialchars($purchase['product_name']); ?></td>
-                <td><?php echo htmlspecialchars($purchase['purchase_price']); ?></td>
-                <td><?php echo htmlspecialchars($purchase['quantity_purchased']); ?></td>
-                <td><?php echo htmlspecialchars($purchase['total']); ?></td>
-                <td><?php echo htmlspecialchars($purchase['vendor_name']); ?></td>
-                <td><?php echo htmlspecialchars($purchase['created_at']); ?></td>
-                <td><?php echo htmlspecialchars($purchase['username']); ?></td>
-            </tr>
-        <?php } ?>
-    <tbody>
-</table>
-
-
+    <div class='category-header'>
+        <span class='heading purchase'>
+            <img src='../Images/purchases.png' alt='purchases icon' />
+            <h2>Purchase Orders</h2>
+        </span>
+        <a href='addpurchase.php'>
+            <button><i class="fa fa-plus" aria-hidden="true"></i> New Purchase</button>
+        </a>
+    </div>
+    
+    <div class='field'>
+        <form class='field-form'>
+            <input type='search' placeholder='Search Purchase orders' />
+            <button type='submit' class='filter-btn'>Filter</button>
+        </form>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Inventory</th>
+                    <th>PRN</th>
+                    <th>Vendor</th>
+                    <th>Quantity</th>
+                    <th>Cost per Inventory</th>
+                    <th>Total Price</th>
+                    <th>Created at</th>
+                    <th>Created by</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <?php foreach($purchases as $purchase) { ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($purchase['product_name']); ?></td>
+                        <td><?php echo htmlspecialchars($purchase['id']); ?></td>
+                        <td><?php echo htmlspecialchars($purchase['vendor_name']); ?></td>
+                        <td><?php echo htmlspecialchars($purchase['quantity_purchased']); ?></td>
+                        <td><?php echo htmlspecialchars($purchase['purchase_price']); ?></td>
+                        <td><?php echo htmlspecialchars($purchase['total']); ?></td>
+                        <td><?php echo htmlspecialchars($purchase['created_at']); ?></td>
+                        <td><?php echo htmlspecialchars($purchase['username']); ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+        <!-- 
+            <p>You currently have no purchase order in your database</p> 
+            <a href='addpurchase.html'>Add New Purchase Order</a>
+        -->
+    </div>
+    
 <?php require_once '../includes/footer.php'; ?>

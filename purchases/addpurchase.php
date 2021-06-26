@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'php_action/core.php';
+    require_once '../php_action/core.php';
 
     $valid['success'] = array('success' => false, 'messages' => array());
 
@@ -77,47 +77,86 @@
             $valid['messages'] = 'Error while adding purchase';
         }
 
-        $conn->close();
-
         echo json_encode($valid);
     }
-
 ?>
 
-<?php require_once 'includes/header.php'; ?>
+<?php require_once '../includes/header.php'; ?>
 
-<form action='addpurchase.php' method='POST'>
-    <label for='productId'>Product Name</label>
-    <select name='productId' id='productId'>
-        <?php foreach($products as $product) { ?>
-            <option value='<?php echo htmlspecialchars($product['id']); ?>'>
-                <?php echo htmlspecialchars($product['product_name']); ?>
-            </option>
-            
-        <?php } ?>
+    <div class='addpurchase'>
+        <span class='heading purchase'>
+            <img src='../Images/purchases.png' alt='Purchase icon' />
+            <h3>New Purchase Order</h3>
+        </span>
+        <form class='vendor-form' action='addpurchase.php' method='POST'>
+            <div>
+                <label for='vendor'>Vendor</label>
+                <select name='vendor' id='vendor'>
+                    <?php foreach($vendors as $vendor) { ?>
+                        <option value='<?php echo htmlspecialchars($vendor['id']); ?>'>
+                            <?php echo htmlspecialchars($vendor['vendor_name']); ?>
+                        </option>
+                        
+                    <?php } ?>
 
-    </select>
-    <br /><br />
-    <label for='purchasePrice'>Purchase Price</label>
-    <input type='text' name='purchasePrice' id='purchasePrice' />
-    <br /><br />
-    <label for='quantityPurchased'>Quantity Purchased</label>
-    <input type='text' name='quantityPurchased' id='quantityPurchased' />
-    <br /><br />
-    <label for='vendor'>Vendor</label>
-    <select name='vendor' id='vendor'>
-        <?php foreach($vendors as $vendor) { ?>
-            <option value='<?php echo htmlspecialchars($vendor['id']); ?>'>
-                <?php echo htmlspecialchars($vendor['vendor_name']); ?>
-            </option>
-            
-        <?php } ?>
+                </select>
+            </div>
+            <div>
+                <label for='prn'>Purchase reference no (PRN)</label>
+                <input type='text' id='prn' name='prn' />
+            </div>
 
-    </select>
-    <br /><br />
-    <button type='submit'> Submit</button>
+            <div>
+                <label for='purchaseNote'>Purchase Notes</label>
+                <textarea id='purchaseNote' name='purchaseNote'  ></textarea>
+            </div>
 
-</form>
+            <table>
+                <tr>
+                    <th>Product Details</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Cost</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>
+                    <select name='productId' id='productId'>
+                        <?php foreach($products as $product) { ?>
+                            <option value='<?php echo htmlspecialchars($product['id']); ?>'>
+                                <?php echo htmlspecialchars($product['product_name']); ?>
+                            </option>
+                            
+                        <?php } ?>
+                    </select>
+                    </td>
+                    <td>
+                        <input type='text' name='description' placeholder="Enter Description" />
+                    </td>
+                    <td>
+                        <input type='number' name='quantityPurchased' id='quantityPurchased' placeholder="Enter Quantity" />
+                    </td>
+                    <td>
+                        <input type='number' name='purchasePrice' id='purchasePrice' placeholder="Enter Cost" />
+                    </td>
+                    <td>
+                        0.00
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">TOTAL</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                </tr>
+            </table>
+                        
+            <div class='add-action-btn'>
+                <button type='submit'>Save</button>
+                <a href='purchases.php'>Cancel</a>
+            </div>
+        </form>
+    </div>
 
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

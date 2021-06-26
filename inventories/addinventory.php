@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'php_action/core.php';
+    require_once '../php_action/core.php';
 
     $valid['success'] = array('success' => false, 'messages' => array());
 
@@ -45,33 +45,47 @@
             $valid['messages'] = 'Error while adding vendor';
         }
 
-        $conn->close();
-
         echo json_encode($valid);
     }
-
 ?>
+<?php require_once '../includes/header.php'; ?>
 
-<?php require_once 'includes/header.php'; ?>
+    <div class='addpurchase'>
+        <span class='heading purchase'>
+            <img src='../Images/inventories.png' alt='Inventory icon' />
+            <h3>New Inventory</h3>
+        </span>
+        <form class='vendor-form' action='addinventory.php' method='POST'>
+            <div>
+                <label for='productName'>Inventory Name</label>
+                <input type='text' id='productName' name='productName' />
+            </div>
 
-<form action='addinventory.php' method='POST'>
-    <label for='productName'>Product Name</label>
-    <input type='text' name='productName' id='productName' />
-    <br /><br />
-    <label for='productCategory'>Category</label>
-    <select name='productCategory' id='productCategory'>
-        <?php foreach($categories as $category) { ?>
-            <option value='<?php echo htmlspecialchars($category['id']); ?>'>
-                <?php echo htmlspecialchars($category['category_name']); ?>
-            </option>
-            
-        <?php } ?>
+            <div>
+                <label for='quantity'>Purchase reference no (PRN)</label>
+                <input type='text' id='quantity' name='quantity' />
+            </div>
 
-    </select>
-    <br /><br />
-    <button type='submit'> Submit</button>
+            <div>
+                <label for='description'>Description</label>
+                <textarea id='description' name='description'  ></textarea>
+            </div>
 
-</form>
+            <div>
+                <label for='productCategory'>Category</label>
+                <select name='productCategory' id='productCategory'>
+                    <?php foreach($categories as $category) { ?>
+                        <option value='<?php echo htmlspecialchars($category['id']); ?>'>
+                            <?php echo htmlspecialchars($category['category_name']); ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class='add-action-btn'>
+                <button type='submit'>Save</button>
+                <a href='inventories.html'>Cancel</a>
+            </div>
+        </form>
+    </div>
 
-
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

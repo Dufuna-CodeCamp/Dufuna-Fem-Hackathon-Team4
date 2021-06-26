@@ -1,0 +1,169 @@
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+.heading {
+    display: flex;
+}
+
+.heading img {
+    width: 32px;
+}
+
+.heading h2,
+h3 {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.field {
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: #fff;
+}
+
+.field-form {
+    display: flex;
+    column-gap: 15px;
+    margin-bottom: 2em;
+}
+
+input[type='search'] {
+    padding: 5px 1.5em;
+    border-radius: 6px;
+    border: 1px solid #C4C4C4;
+    font-size: 18px;
+    width: 265px;
+
+
+}
+
+.filter-btn {
+    padding: 0.2em 1.5em;
+    background-color: #474242;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4em;
+}
+
+th {
+    border: 1px solid #C4C4C4;
+    border-top: none;
+    padding-bottom: 6px;
+}
+
+tr {
+    border-bottom: 2px solid #C4C4C4;
+}
+
+td {
+    padding: 5px 0 10px;
+    text-align: center;
+}
+
+.del-btn {
+    border: none;
+    background-color: #fff;
+    color: red;
+}
+
+.del-btn i {
+    font-size: 22px;
+}
+
+.addcategory {
+    width: 550px;
+    margin: 5em auto;
+}
+
+.addvendor {
+    width: 90%;
+    margin: 1em auto 1em 2em;
+}
+
+.addvendor img {
+    color: black;
+    background-color: black;
+}
+
+.addcategory div,
+.addvendor div {
+    margin: 2em 0;
+}
+
+.addcategory form,
+.addvendor form {
+   position: relative;
+}
+
+.addcategory input,
+.addcategory textarea,
+.add-action-btn,
+.addvendor input,
+.addvendor textarea {
+    position: absolute;
+    right: 0;
+    width: 65%;
+}
+
+.addvendor input,
+.addvendor textarea {
+    width: 300px;
+    right: 200px;
+}
+
+.addvendor textarea {
+    height: 70px;
+}
+
+.addcategory div:last-of-type {
+    margin-top: 130px;
+}
+
+.addcategory textarea {
+    height: 160px;
+}
+
+.add-action-btn button,
+.add-action-btn a {
+    border: none;
+    border-radius: 5px;
+    padding: 0.4em 1.5em;
+}
+
+.add-action-btn button {
+    background-color: #00BCCD;
+}
+
+.add-action-btn a {
+    background-color: #474242;
+    color: #fff;
+    text-decoration: none;
+}
+
+.vendor-form {
+    border: 1px solid #C4C4C4;
+    background-color: #fff;
+    margin: 1.5em 0;
+    padding: 1.5em;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.purchase img {
+    background-color: black;
+}

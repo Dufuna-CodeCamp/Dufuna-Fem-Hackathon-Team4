@@ -1,0 +1,93 @@
+body {
+  background-color: #fffafa;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Open Sans", Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  background-color: #e3e3e3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 2em;
+  z-index: 10;
+}
+
+.title {
+  font-size: 22px;
+}
+
+header div {
+  width: 190px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header img {
+  width: 28px;
+  height: 28px;
+}
+
+.main {
+  position: relative;
+}
+
+nav {
+  background-color: #474242;
+  position: fixed;
+  left: 0;
+  top: 56px;
+  padding: 1.2em 1em;
+  height: 100vh;
+}
+
+nav ul {
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a:active,
+nav a:focus {
+  color: orange;
+}
+
+nav img {
+  width: 34px;
+}
+
+.right {
+  position: absolute;
+  left: 120px;
+  right: 0;
+}
+
+.content {
+  width: 90%;
+  margin: 1.5em auto 3em;
+  padding-top: 54px;
+}
